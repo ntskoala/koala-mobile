@@ -9,8 +9,8 @@ page-home {
   } 
 }
 @keyframes Cabecera {
-    0% {margin-left: -500px;}
-    100% {margin-left: 0px;}
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 @keyframes Titulo {
     0% {margin-left: -100px;}
@@ -21,12 +21,13 @@ page-home {
 }
 
 .cabecera{
-    animation: Cabecera 2s;
+    animation: Cabecera 4s;
     width: 100%;
 }
 
 .titulo{
-    animation: Titulo 3s 2s;
+    animation: Titulo 4s;
+    background-color: blue;
 }
 }
 

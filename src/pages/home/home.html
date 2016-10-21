@@ -1,6 +1,9 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title class="titulo">Home</ion-title>
+  <ion-navbar class="titulo" color="primary">
+             <button ion-button menuToggle>
+      <ion-icon name='menu'></ion-icon>
+</button>
+    <ion-title >Home</ion-title>
   </ion-navbar>
   <img class="cabecera" src="assets/img/inspiration.jpg" width="100%">
 </ion-header>
@@ -13,8 +16,8 @@
     <ion-avatar item-left>
       <img src="assets/img/{{servicio.imagen}}" >
     </ion-avatar>
-         <h2>{{i}} {{servicio.nombre}}</h2>
-          <p>{{servicio.descripcion}} </p>
+         <h2>{{i}} {{servicio.nombre | translate}}</h2>
+          <p>{{servicio.descripcion | translate}} </p>
 
     </ion-item>
 

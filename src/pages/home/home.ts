@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, a } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
@@ -24,9 +24,9 @@ export interface Servicio{
 })
 export class HomePage implements OnInit, AfterViewInit{
 public servicios: Servicio[]=[
-{"nombre":"webs","descripcion":"Desarrollo y diseño de webs de empresa","imagen":"web.jpg"},
-{"nombre":"webs","descripcion":"Desarrollo y diseño de webs de empresa","imagen":"web.jpg"},
-{"nombre":"webs","descripcion":"Desarrollo y diseño de webs de empresa","imagen":"web.jpg"}
+{"nombre":'web.nombre',"descripcion":"web.descripcion","imagen":"web.jpg"},
+{"nombre":"Apps","descripcion":"Desarrollo y diseño de webs de empresa","imagen":"apps.jpg"},
+{"nombre":"Web Apps","descripcion":"Desarrollo y diseño de webs de empresa","imagen":"webapps.jpg"}
 
 ];
 //public koalaservicios:Array<any>=[];

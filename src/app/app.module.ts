@@ -6,6 +6,13 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {DetallesPage} from '../pages/detalles/detalles';
+import {HttpModule,Http} from '@angular/http';
+import {TranslateModule,TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
+import {BrowserModule} from "@angular/platform-browser";
+
+export function createTranslateLoader(http: Http) {
+    return new TranslateStaticLoader(http, './assets/i18n', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -17,8 +24,12 @@ import {DetallesPage} from '../pages/detalles/detalles';
     DetallesPage
   ],
   imports: [
+    BrowserModule,
+    HttpModule,
+    TranslateModule.forRoot({provide: TranslateLoader,useFactory: (createTranslateLoader),deps: [Http]}),
     IonicModule.forRoot(MyApp,{tabsPlacement: 'top'})
   ],
+  exports: [BrowserModule, HttpModule, TranslateModule],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
