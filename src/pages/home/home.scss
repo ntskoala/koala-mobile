@@ -1,0 +1,32 @@
+page-home {
+@keyframes MyAnimation {
+  0% {
+    padding-left: 1000px;
+  }
+  100% {
+    padding-left: 0px;
+
+  } 
+}
+@keyframes Cabecera {
+    0% {margin-left: -500px;}
+    100% {margin-left: 0px;}
+}
+@keyframes Titulo {
+    0% {margin-left: -100px;}
+    100% {margin-left: 0px;}
+}
+.my-animation {
+  animation: MyAnimation 2s;
+}
+
+.cabecera{
+    animation: Cabecera 2s;
+    width: 100%;
+}
+
+.titulo{
+    animation: Titulo 3s 2s;
+}
+}
+

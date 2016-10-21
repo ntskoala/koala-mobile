@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="titulo">Home</ion-title>
+  </ion-navbar>
+  <img class="cabecera" src="assets/img/inspiration.jpg" width="100%">
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list class="my-animation" *ngFor="let servicio of $servicios | async; let i = index">
+  <ion-item-sliding *ngIf="i" (click)="detalles(servicio)">
+    <ion-item>
+    <ion-avatar item-left>
+      <img src="assets/img/{{servicio.imagen}}" >
+    </ion-avatar>
+         <h2>{{i}} {{servicio.nombre}}</h2>
+          <p>{{servicio.descripcion}} </p>
+
+    </ion-item>
+
+
+
+    <ion-item-options side="left">
+      <button ion-button (click)="detalles()" color="primary">
+        <ion-icon name="text"></ion-icon>
+        Detalles
+      </button>
+    </ion-item-options>
+    <ion-item-options side="right">
+        <button ion-button color="favorite">
+        <ion-icon name="checkmark-circle"></ion-icon>
+       asistiré
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+</ion-content>
