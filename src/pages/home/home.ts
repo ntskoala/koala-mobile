@@ -25,8 +25,8 @@ export interface Servicio{
 export class HomePage implements OnInit, AfterViewInit{
 public servicios: Servicio[]=[
 {"nombre":'web.nombre',"descripcion":"web.descripcion","imagen":"web.jpg"},
-{"nombre":"Apps","descripcion":"Desarrollo y diseño de webs de empresa","imagen":"apps.jpg"},
-{"nombre":"Web Apps","descripcion":"Desarrollo y diseño de webs de empresa","imagen":"webapps.jpg"}
+{"nombre":"apps.nombre","descripcion":"apps.descripcion","imagen":"apps.jpg"},
+{"nombre":"webapps.nombre","descripcion":"webapps.descripcion","imagen":"webapps.jpg"}
 
 ];
 //public koalaservicios:Array<any>=[];

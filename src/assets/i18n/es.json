@@ -10,9 +10,19 @@
         "config": "Configuración"
     },
     "web":{
-        "nombre": "Web2",
-        "descripcion": "desarrollo webs",
-        "imagen":"web.jpg"
+        "nombre": "Webs",
+        "descripcion": "Desarrollo webs y aplicaciones basadas en entorno web",
+        "descripcionlarga": "Desde sencillas landing pages, webs corporativas, a potentes herramientas basadas en entorno web, basamos nuestro desarrollo en el framework angular de google, uma garantía de rendimiento, escalabilidad y mantenimiento."
+    },
+    "apps":{
+        "nombre": "Apps",
+        "descripcion": "Nuestra especialidad son las apps híbridas",
+        "descripcionlarga":"Si tu necesidad requiere el aprovechamiento de todos los recursos y sensores de los móviles esta es tu opción. Un único desarrollo, disponibilidad para las tiendas apple, google y windows, todos nuestros desarrollos se basan en Angular e Ionic2, una garantía de rendimiento, escalabilidad y mantenimiento."
+    },
+    "webapps":{
+        "nombre": "Progresive Web Apps",
+        "descripcion": "Quédate con lo mejor de la web y lo mejor de las apps.",
+        "descripcionlarga":"Desarrollo de potentes herramientas web, que funcionan como una app, recibe notificaciones visualiza en cualquier dispositivo, y sin necesidad de instalaciones o descargas de tiendas"
     },
     "alertas": {
         "error": "Error",
