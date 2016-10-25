@@ -16,6 +16,7 @@ import 'rxjs/add/operator/map'
 export interface Servicio{
   nombre: string,
   descripcion: string,
+  descripcionlarga: string,
   imagen: string
 }
 @Component({
@@ -24,9 +25,9 @@ export interface Servicio{
 })
 export class HomePage implements OnInit, AfterViewInit{
 public servicios: Servicio[]=[
-{"nombre":'web.nombre',"descripcion":"web.descripcion","imagen":"web.jpg"},
-{"nombre":"apps.nombre","descripcion":"apps.descripcion","imagen":"apps.jpg"},
-{"nombre":"webapps.nombre","descripcion":"webapps.descripcion","imagen":"webapps.jpg"}
+{"nombre":'web.nombre',"descripcion":"web.descripcion","descripcionlarga":"web.descripcionlarga","imagen":"web.jpg"},
+{"nombre":"apps.nombre","descripcion":"apps.descripcion","descripcionlarga":"apps.descripcionlarga","imagen":"apps.jpg"},
+{"nombre":"webapps.nombre","descripcion":"webapps.descripcion","descripcionlarga":"webapps.descripcionlarga","imagen":"webapps.jpg"}
 
 ];
 //public koalaservicios:Array<any>=[];
@@ -63,7 +64,7 @@ anim(){
 
 }
 detalles(servicio){
-  this.navCtrl.push(DetallesPage);
+  this.navCtrl.push(DetallesPage,{servicio});
 }
 
 }

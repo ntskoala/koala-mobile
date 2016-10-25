@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+
 
 /*
   Generated class for the Servicio page.
@@ -12,11 +13,17 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'detalles.html'
 })
 export class DetallesPage {
-
-  constructor(public navCtrl: NavController) {}
+//private servicio: Servicio;
+public nombre: string;
+public descripcion: string;
+public descripcionlarga: string;
+  constructor(public navCtrl: NavController, public params: NavParams) {}
 
   ionViewDidLoad() {
     console.log('Hello detalles Page');
+    this.nombre = this.params.get("servicio").nombre;
+    this.descripcion = this.params.get("servicio").descripcion;
+    this.descripcionlarga = this.params.get("servicio").descripcionlarga;
   }
 
 }
