@@ -6,6 +6,11 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {DetallesPage} from '../pages/detalles/detalles';
+import { Services } from '../pages/services/services';
+import { Config } from '../pages/config/config';
+
+import { Noticias } from '../pages/noticias/noticias';
+import { Notifications } from '../providers/notifications'
 import {HttpModule,Http} from '@angular/http';
 import {TranslateModule,TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 import {BrowserModule} from "@angular/platform-browser";
@@ -21,7 +26,10 @@ export function createTranslateLoader(http: Http) {
     ContactPage,
     HomePage,
     TabsPage,
-    DetallesPage
+    DetallesPage,
+    Noticias,
+    Services,
+    Config
   ],
   imports: [
     BrowserModule,
@@ -37,8 +45,11 @@ export function createTranslateLoader(http: Http) {
     ContactPage,
     HomePage,
     TabsPage,
-    DetallesPage
+    DetallesPage,
+    Noticias,
+    Services,
+    Config
   ],
-  providers: []
+  providers: [Notifications]
 })
 export class AppModule {}
