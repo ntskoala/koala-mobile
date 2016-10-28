@@ -12,6 +12,9 @@ import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { Notifications } from '../providers/notifications';
+import { Config } from '../pages/config/config';
+import { Services} from '../pages/services/services';
+
 @Component({
   templateUrl: 'app.component.html',
 })
@@ -36,9 +39,9 @@ pages: Array<{title: string, component: any}>;
 
        this.pages = [
       { title: 'menu.home' , component: HomePage },
-      { title: 'menu.servicios' , component: AboutPage },
+      { title: 'menu.servicios' , component: Services },
       { title: 'menu.contact' , component: ContactPage },
-       { title: 'menu.config' , component: ContactPage }
+       { title: 'menu.config' , component: Config }
       ];
 
       if (localStorage.getItem("lang") === null){
@@ -49,12 +52,13 @@ pages: Array<{title: string, component: any}>;
           this.translate.use(localStorage.getItem("lang"));
           this.translate.setDefaultLang(localStorage.getItem("lang"));
       }
-  }
+  } 
 
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    //this.nav.setRoot(page.component);
+    this.nav.push(page.component);
 }
 
 notificaciones(){

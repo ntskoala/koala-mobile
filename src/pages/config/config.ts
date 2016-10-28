@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import {TranslateService} from 'ng2-translate/ng2-translate';
 /*
   Generated class for the Config page.
 
@@ -12,11 +12,20 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'config.html'
 })
 export class Config {
-
-  constructor(public navCtrl: NavController) {}
+public lang:string;
+  constructor(public navCtrl: NavController, public translate: TranslateService) {
+        this.lang = localStorage.getItem("lang");
+  }
 
   ionViewDidLoad() {
     console.log('Hello Config Page');
   }
+
+selectlang(){
+//  alert ("idioma" + this.lang);
+  localStorage.setItem("lang",this.lang);
+  this.translate.use(this.lang);
+  this.translate.setDefaultLang(this.lang);
+}
 
 }

@@ -1,3 +1,17 @@
 page-contact {
 
+@keyframes MyAnimation {
+  0% {
+    padding-top: 1000px;
+  }
+  100% {
+    padding-top: 0px;
+
+  } 
+}
+
+
+.animation {
+  animation: MyAnimation 1s;
+}
 }

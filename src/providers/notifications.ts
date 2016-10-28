@@ -27,7 +27,9 @@ registerdevice(token){
     var platform= Device.device.platform;
     var model = Device.device.model;
     var uuid = Device.device.uuid;
-    var sURL = "http://web.ntskoala.com/api/registerdevice.php?uuid="+uuid+"&token="+token+"&platform="+platform+"&model="+model;
+    var fabricante = Device.device.manufacturer;
+    var version = Device.device.version;
+    var sURL = "http://web.ntskoala.com/api/registerdevice.php?uuid="+uuid+"&token="+token+"&platform="+platform+"&model="+model+"&fabricante="+fabricante+"&version="+version;
 
     this.http.get(sURL).subscribe(
     (data) => console.log(data.json()),

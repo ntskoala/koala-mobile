@@ -5,10 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>services</ion-title>
+  <ion-navbar class="titulo" color="primary">
+             <button ion-button menuToggle>
+      <ion-icon name='menu'></ion-icon>
+</button>
+    <ion-title >{{"menu.servicios" | translate}}</ion-title>
   </ion-navbar>
+
 <ion-slides [options]="slideOptions">
 <ion-slide>
 <img class="cabecera" src="assets/img/services3.jpg" width="100%">
@@ -32,9 +35,8 @@
     <ion-avatar item-left>
       <img src="assets/img/{{servicio.imagen}}" >
     </ion-avatar>
-         <h2>{{i}} {{servicio.nombre | translate}}</h2>
+         <h2>{{servicio.nombre | translate}}</h2>
           <p>{{servicio.descripcion | translate}} </p>
-
     </ion-item>
 
 

@@ -1,11 +1,15 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
+  <ion-navbar class="titulo" color="primary">
+             <button ion-button menuToggle>
+      <ion-icon name='menu'></ion-icon>
+</button>
+    <ion-title >{{"menu.about" | translate}}</ion-title>
   </ion-navbar>
+  <img class="cabecera" src="assets/img/inspiration.jpg" width="100%">
 </ion-header>
 
 <ion-content padding>
-<a (click)="sharing()">share</a>
+  <ion-card>
+<p class="texto"><span [innerHTML]="'about' | translate"></span></p>
+  </ion-card>
 </ion-content>
