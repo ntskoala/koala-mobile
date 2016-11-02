@@ -1,8 +1,11 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, Platform } from 'ionic-angular';
+import { SQLite } from 'ionic-native';
+
 
 import {DetallesPage} from '../detalles/detalles';
+import {Noticias} from '../noticias/noticias';
 
 import {Observable} from 'rxjs/Observable'
 import 'rxjs/add/observable/timer'
@@ -14,27 +17,29 @@ import 'rxjs/add/operator/map'
 
 
 export interface Servicio{
-  nombre: string,
-  descripcion: string,
-  descripcionlarga: string,
-  imagen: string
+  title: string,
+  message: string,
+  //descripcionlarga: string,
+  image: string
 }
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit, AfterViewInit{
-public servicios: Servicio[]=[
-{"nombre":'web.nombre',"descripcion":"web.descripcion","descripcionlarga":"web.descripcionlarga","imagen":"web.png"},
-{"nombre":"apps.nombre","descripcion":"apps.descripcion","descripcionlarga":"apps.descripcionlarga","imagen":"apps.jpg"},
-{"nombre":"webapps.nombre","descripcion":"webapps.descripcion","descripcionlarga":"webapps.descripcionlarga","imagen":"webapps.jpg"}
-
-];
+public servicios: Servicio[]=[];
+// {"nombre":'web.nombre',"descripcion":"web.descripcion","descripcionlarga":"web.descripcionlarga","imagen":"web.jpg"},
+// {"nombre":"apps.nombre","descripcion":"apps.descripcion","descripcionlarga":"apps.descripcionlarga","imagen":"apps.jpg"},
+// {"nombre":"webapps.nombre","descripcion":"webapps.descripcion","descripcionlarga":"webapps.descripcionlarga","imagen":"webapps.jpg"}
+// ];
 //public koalaservicios:Array<any>=[];
 public koalaservicios = new Array();
-$servicios;
-  constructor(public navCtrl: NavController) {
-
+$noticias;
+public db: SQLite;
+  constructor(platform: Platform,public navCtrl: NavController) {
+    platform.ready().then(() => 
+      this.loadnoticias());
+  
   }
 ngAfterViewInit(){
  // alert('viewinit');
@@ -42,19 +47,22 @@ ngAfterViewInit(){
 }
 ngOnInit(){
 //alert("oninit")
+
 }
  ionViewDidLoad() {
  //   alert('viewload');
   }
   ionViewDidEnter() {
-    this.$servicios;
+
+    this.$noticias;
 this.koalaservicios=[];
   this.anim();
+ 
  }
 anim(){
     var timer = 0;
     var elem;
-    this.$servicios = Observable.from([[], ...this.servicios])
+    this.$noticias = Observable.from([[], ...this.servicios])
     .mergeMap(x => Observable.timer(timer++ * 300)
     .map(y => {
       console.log(x);
@@ -63,8 +71,32 @@ anim(){
     }))
 
 }
-detalles(servicio){
-  this.navCtrl.push(DetallesPage,{servicio});
+detalles(noticia){
+  this.navCtrl.push(Noticias,{noticia});
 }
 
+loadnoticias(){
+    this.db = new SQLite();
+    this.db.openDatabase({ name: "koala.db", location: "default" }).then(() => {
+      //this.refresh();
+      console.log("base de datos abierta");
+      this.db.executeSql('select * from noticias ORDER BY id DESC', []).then((data) => {
+        console.log("NOTICIA SELECT-> ", data.rows.length);
+                   for(let i = 0; i < data.rows.length; i++) {
+                      this.servicios.push({
+                      "title": data.rows.item(i).title,
+                      "message": data.rows.item(i).message,
+                     // "descripcionlarga": data.rows.item(i).noticia,
+                      "image": data.rows.item(i).image,
+                      });
+                    }
+                    this.anim();
+        //  alert ('creada logins');
+      }, (error) => {
+        console.log("ERROR load noticias -> ", error);
+      });
+    }, (error) => {
+      console.log("ERROR al abrir la bd en loadnoticias: ", error);
+    });
+}
 }

@@ -8,16 +8,17 @@
   <img class="cabecera" src="assets/img/inspiration.jpg" width="100%">
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="has-header">
 
-    <ion-list class="my-animation" *ngFor="let servicio of $servicios | async; let i = index">
-  <ion-item-sliding *ngIf="i" (click)="detalles(servicio)">
+    <ion-list class="my-animation" *ngFor="let noticia of $noticias | async; let i = index">
+   <!--<ion-list class="my-animation" *ngFor="let servicio of servicios; let i = index">-->
+  <ion-item-sliding *ngIf="noticia.title" (click)="detalles(noticia)">
     <ion-item>
     <ion-avatar item-left>
-      <img src="assets/img/{{servicio.imagen}}" >
+      <img [src]="'http://web.ntskoala.com/noticias/img/'+noticia.image" >
     </ion-avatar>
-         <h2>{{i}} {{servicio.nombre | translate}}</h2>
-          <p>{{servicio.descripcion | translate}} </p>
+         <h2>{{noticia.title}}</h2>
+          <p>{{noticia.message}} </p>
 
     </ion-item>
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController,NavParams } from 'ionic-angular';
+import { NavController,NavParams, Icon } from 'ionic-angular';
 import { SocialSharing } from 'ionic-native';
 /*
   Generated class for the Noticias page.
@@ -14,19 +14,21 @@ import { SocialSharing } from 'ionic-native';
 export class Noticias {
  public noticia: string;
  public title: string;
+ public image: string;
   constructor(public navCtrl: NavController, public params: NavParams) {}
 
   ionViewDidLoad() {
     console.log('Hello Noticias Page');
-   this.title = this.params.get('data').title;
-   this.noticia = this.params.get('data').message;
+   this.title = this.params.get('noticia').title;
+   this.noticia = this.params.get('noticia').message;
+   this.image = this.params.get('noticia').image;
   }
 
 
 sharing(){
-  let message = "La nueva app de koala se está cocinando";
-let subject = "koala app";
-let file = "http://www.ntskoala.com/img/logo.png";
+  let message = this.noticia;
+let subject = this.title;
+let file = this.image;
 let url ="http://ntskoala.com";
   SocialSharing.share(message, subject, file, url).then(
     (resultado) => console.log("shared",resultado),
@@ -35,5 +37,8 @@ let url ="http://ntskoala.com";
 
 }
 
+swiped(e){
+ // console.log ("swiped" + e.direction);
+}
 
 }

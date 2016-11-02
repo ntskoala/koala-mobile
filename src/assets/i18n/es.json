@@ -6,6 +6,8 @@
         "servicios": "Servicios",
         "contact": "Contacto",
         "about": "About",
+        "detalles": "Detalles",
+        "noticias": "Noticias",
         "config": "Configuración"
     },
     "web":{
@@ -24,6 +26,10 @@
         "descripcionlarga":"Desarrollo de potentes herramientas web, que funcionan como una app, recibe notificaciones visualiza en cualquier dispositivo, y sin necesidad de instalaciones o descargas de tiendas"
     },
     "about": "Una app es una de las mejores herramientas para mejorar la comunicación y fidelización con nuestros clientes.<BR>En NTS Koala nos dedicamos al desarrollo web desde el año 1999, y desde principios de esta década creamos apps.<BR>Esta aplicación es una muestra, incluye notificaciones push, llamadas de teléfono directas, compartir en redes sociales, actualización y sincronización de información en la nube, entre muchos otros servicios.<BR>Aprovecharemos esta app para informar semanalmente de noticias y/o trucos referentes a móviles y movilidad, esperamos que sea de utilidad y sirva de inspiración para su propia app.<BR>Todas las empresas deberían tener una herramienta social para mejorar la conexión con sus clientes",
+    "titulo1": "Nueva app de koala ya disponible",
+    "noticia1": "Ya está disponible la nueva app de koala, en está sección encontrarás cada semana una noticia o truco sobre móviles o movilidad que pueden resultar de tu interés",
+    "titulo2": "Windows Phone podría desaparecer en el futuro",
+    "noticia2": "Según parece Microsoft ha perdido el interés por seguir en la batalla de los móviles, y pocas novedades se verán respecto al sistema operativo para móviles <a href='http://www.xatakamovil.com/mercado/caminamos-irremediablemente-hacia-un-duopolio-en-sistemas-operativos-moviles'>leer más</a>",
     "alertas": {
         "error": "Error",
         "maluser": "Usuario o password incorrecto, vuelva a intentarlo",

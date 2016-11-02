@@ -14,15 +14,20 @@
   <img class="cabecera" src="assets/img/inspiration.jpg" width="100%">
 </ion-header>
 
-
-<ion-content padding>
-<ion-card>
+ 
+<ion-content padding class="has-header">
+  <ion-item>
+    <span style="float:right"><ion-icon name="md-share" (click)="sharing()"></ion-icon></span>
+  </ion-item>
+<ion-card (pan)="swiped($event)">
   <ion-card-title>
  <span style="float:left">{{title}}</span>
- <span style="float:right"><ion-icon name="facebook" (click)="sharing()"></ion-icon></span>
   </ion-card-title>
   <ion-card-content>
-    {{noticia}}
+    <p class="texto"><span [innerHTML]="noticia"></span></p>
+   
+    <BR>
+    <img [src]="'http://web.ntskoala.com/noticias/img/'+image">
   </ion-card-content>
 </ion-card>
 </ion-content>

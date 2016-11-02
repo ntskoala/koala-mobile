@@ -16,7 +16,10 @@
 
 
 <ion-content padding>
-<ion-card>
+    <ion-item>
+    <span style="float:right"><ion-icon name="md-share" (click)="sharing()"></ion-icon></span>
+  </ion-item>
+<ion-card (swipe)="swipe($event)">
   <ion-card-title>
   {{nombre | translate}}
   </ion-card-title>

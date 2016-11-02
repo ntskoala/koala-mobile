@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Icon } from 'ionic-angular';
 
 
 /*
@@ -26,4 +26,11 @@ public descripcionlarga: string;
     this.descripcionlarga = this.params.get("servicio").descripcionlarga;
   }
 
+swipe(e){
+  console.log("swipe");
+  alert('swiped' + e.direction);
+}
+sharing(){
+  
+}
 }
