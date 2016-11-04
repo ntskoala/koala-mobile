@@ -17,6 +17,7 @@ import 'rxjs/add/operator/map'
 
 
 export interface Servicio{
+  id:number;
   title: string,
   message: string,
   //descripcionlarga: string,
@@ -84,6 +85,7 @@ loadnoticias(){
         console.log("NOTICIA SELECT-> ", data.rows.length);
                    for(let i = 0; i < data.rows.length; i++) {
                       this.servicios.push({
+                        "id": data.rows.item(i).id,
                       "title": data.rows.item(i).title,
                       "message": data.rows.item(i).message,
                      // "descripcionlarga": data.rows.item(i).noticia,

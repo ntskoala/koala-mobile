@@ -12,6 +12,7 @@ import { SocialSharing } from 'ionic-native';
   templateUrl: 'noticias.html'
 })
 export class Noticias {
+  public id:number;
  public noticia: string;
  public title: string;
  public image: string;
@@ -19,22 +20,59 @@ export class Noticias {
 
   ionViewDidLoad() {
     console.log('Hello Noticias Page');
+    this.id = this.params.get('noticia').id;
    this.title = this.params.get('noticia').title;
    this.noticia = this.params.get('noticia').message;
    this.image = this.params.get('noticia').image;
   }
 
 
-sharing(){
+sharemail(){
+  alert('mail');
   let message = this.noticia;
 let subject = this.title;
 let file = this.image;
 let url ="http://ntskoala.com";
-  SocialSharing.share(message, subject, file, url).then(
+  SocialSharing.shareViaEmail(message, subject,null,null,null, file).then(
     (resultado) => console.log("shared",resultado),
     (error) => console.log("sharing error",error)
   );
+}
 
+sharewhatsapp(){
+  alert('whatsapp');
+  let message = this.noticia;
+let subject = this.title;
+let file = this.image;
+let url ="http://ntskoala.com";
+  SocialSharing.shareViaWhatsApp(message,file, url).then(
+    (resultado) => console.log("shared",resultado),
+    (error) => console.log("sharing error",error)
+  );
+}
+
+sharefacebook(){
+  alert('facebook');
+  let message = this.noticia;
+let subject = this.title;
+let file = this.image;
+let url ="http://web.ntskoala.com/noticias/noticia.php?id"+this.id;
+  SocialSharing.shareViaFacebookWithPasteMessageHint(null,null,url,subject).then(
+    (resultado) => console.log("shared",resultado),
+    (error) => console.log("sharing error",error)
+  );
+}
+
+shareinstagram(){
+  alert('instagram');
+  let message = this.noticia;
+let subject = this.title;
+let file = this.image;
+let url ="http://ntskoala.com";
+  SocialSharing.shareViaInstagram(message, file).then(
+    (resultado) => console.log("shared",resultado),
+    (error) => console.log("sharing error",error)
+  );
 }
 
 swiped(e){

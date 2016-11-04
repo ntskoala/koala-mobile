@@ -1,4 +1,15 @@
 page-noticias {
+
+@keyframes cabeceranoticia{
+    0% {height: 175px;}
+    100% {height: 0px;}
+}
+
+
+.imgcabecera {
+  animation: cabeceranoticia 2s;
+}
+
 .texto{
     text-align: justify
 }

@@ -11,13 +11,16 @@
 </button>
     <ion-title >{{"menu.noticias" | translate}}</ion-title>
   </ion-navbar>
-  <img class="cabecera" src="assets/img/inspiration.jpg" width="100%">
+  <img class="imgcabecera" src="assets/img/inspiration.jpg" width="100%">
 </ion-header>
 
  
 <ion-content padding class="has-header">
   <ion-item>
-    <span style="float:right"><ion-icon name="md-share" (click)="sharing()"></ion-icon></span>
+         <!--&nbsp; <span style="float:right"><ion-icon name="ios-mail-outline" (click)="sharemail()"></ion-icon></span>-->
+         &nbsp; <span style="float:left"><ion-icon name="logo-whatsapp" (click)="sharewhatsapp()"></ion-icon></span>
+         <!--&nbsp; <span style="float:right"><ion-icon name="logo-instagram" (click)="shareinstagram()"></ion-icon></span>-->
+         &nbsp; <span style="float:right"><ion-icon name="logo-facebook" (click)="sharefacebook()"></ion-icon></span>
   </ion-item>
 <ion-card (pan)="swiped($event)">
   <ion-card-title>

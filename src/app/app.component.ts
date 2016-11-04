@@ -111,7 +111,7 @@ push.on('error', (e) => {
       //this.refresh();
       console.log("base de datos abierta");
       //this.db.executeSql('DROP TABLE noticias',[]);
-      this.db.executeSql('CREATE TABLE IF NOT EXISTS noticias (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, message TEXT, image TEXT)', []).then((data) => {
+      this.db.executeSql('CREATE TABLE IF NOT EXISTS noticias (id INTEGER PRIMARY KEY, title TEXT, message TEXT, image TEXT)', []).then((data) => {
         console.log("TABLE CREATED  noticias-> " + JSON.stringify(data.res));
       //   this.db.executeSql('INSERT INTO noticias (title , message, image ) VALUES (?,?,?)', [titulo1, noticia1,foto1]).then((data) => {
       //   console.log("NOTICIA GUARDADA 1-> " + JSON.stringify(data.res));

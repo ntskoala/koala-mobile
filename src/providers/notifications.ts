@@ -57,6 +57,7 @@ this.db.openDatabase({ name: "koala.db", location: "default" }).then(() => {
     (noticias) => {
                       this.db.executeSql("delete from noticias",[]);
                       noticias.data.forEach(noticia => {  
+                      let id = noticia.id;
                       let titulo = noticia.title;
                       let message = noticia.msg;
                       let foto = noticia.image; 
