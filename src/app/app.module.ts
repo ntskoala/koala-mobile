@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {DetallesPage} from '../pages/detalles/detalles';
 import { Services } from '../pages/services/services';
+import { Rating } from '../pages/rating/rating';
 import { Config } from '../pages/config/config';
 
 import { Noticias } from '../pages/noticias/noticias';
@@ -29,7 +30,8 @@ export function createTranslateLoader(http: Http) {
     DetallesPage,
     Noticias,
     Services,
-    Config
+    Config,
+    Rating
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ export function createTranslateLoader(http: Http) {
     DetallesPage,
     Noticias,
     Services,
-    Config
+    Config,
+    Rating
   ],
   providers: [Notifications]
 })

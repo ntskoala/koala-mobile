@@ -1,0 +1,23 @@
+rating {
+.star{
+    float:left;
+    background-color: #fff;
+    width: 32px;
+    height: 32px;
+    background-image: url('../assets/img/star0.png');
+    background-size: 32px;
+    background-repeat: no-repeat;
+}
+// .star:hover{
+//     background-image: url('../assets/img/star1.png');
+// }
+.star2{
+    float:left;
+    background-color: #fff;
+    width: 32px;
+    height: 32px;
+    background-image: url('../assets/img/star1.png');
+    background-size: 32px;
+    background-repeat: no-repeat;
+}
+}

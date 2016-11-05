@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, Icon } from 'ionic-angular';
-
+import { Rating } from '../rating/rating';
 
 /*
   Generated class for the Servicio page.

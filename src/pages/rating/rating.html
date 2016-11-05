@@ -1,0 +1,11 @@
+<!--
+  Generated template for the Rating page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+  <span *ngFor="let star of rating; let i = index">
+<div id="star{{i}}" class="star" (click)="setrating(i)"></div>
+  </span>
+
