@@ -1,12 +1,12 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { NavController, Platform } from 'ionic-angular';
-import { SQLite } from 'ionic-native';
+import { SQLite,Network } from 'ionic-native';
 
 
 import {DetallesPage} from '../detalles/detalles';
 import {Noticias} from '../noticias/noticias';
-
+import {Fotos} from '../../providers/fotos';
 import {Observable} from 'rxjs/Observable'
 import 'rxjs/add/observable/timer'
 import 'rxjs/add/observable/from'
@@ -28,6 +28,7 @@ export interface Servicio{
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit, AfterViewInit{
+
 public servicios: Servicio[]=[];
 // {"nombre":'web.nombre',"descripcion":"web.descripcion","descripcionlarga":"web.descripcionlarga","imagen":"web.jpg"},
 // {"nombre":"apps.nombre","descripcion":"apps.descripcion","descripcionlarga":"apps.descripcionlarga","imagen":"apps.jpg"},
@@ -36,8 +37,9 @@ public servicios: Servicio[]=[];
 //public koalaservicios:Array<any>=[];
 public koalaservicios = new Array();
 $noticias;
+public gallery: string = "assets/img/inspiration.jpg";
 public db: SQLite;
-  constructor(platform: Platform,public navCtrl: NavController) {
+  constructor(platform: Platform,public navCtrl: NavController,public fotos:Fotos) {
     platform.ready().then(() => 
       this.loadnoticias());
   
@@ -48,10 +50,12 @@ ngAfterViewInit(){
 }
 ngOnInit(){
 //alert("oninit")
-
+if (Network.connection != 'none'){
+  this.gallery = "https://source.unsplash.com/600x300/?technology"
+}
 }
  ionViewDidLoad() {
- //   alert('viewload');
+
   }
   ionViewDidEnter() {
 

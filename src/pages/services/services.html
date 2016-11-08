@@ -1,32 +1,13 @@
-<!--
-  Generated template for the Services page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header class="header">
-  <ion-navbar class="titulo" color="primary">
-             <button ion-button menuToggle>
+<ion-header class="myheader">
+	<ion-navbar class="titulo" color="primary">
+		<button ion-button menuToggle>
       <ion-icon name='menu'></ion-icon>
 </button>
-    <ion-title >{{"menu.servicios" | translate}}</ion-title>
-  </ion-navbar>
-
-<ion-slides [options]="slideOptions">
-<ion-slide>
-<img class="cabecera" src="assets/img/services3.jpg" width="100%">
-</ion-slide>
-
-<ion-slide>
-<img class="cabecera" src="assets/img/services3.jpg" width="100%">
-</ion-slide>
-
-</ion-slides>
-
-
-
+		<ion-title>{{"menu.servicios" | translate}}</ion-title>
+	</ion-navbar>
+<img class="cabecera" [src]="gallery_service" width="100%">
 </ion-header>
-
 
 <ion-content padding class="has-header">
     <ion-list class="my-animation" *ngFor="let servicio of $servicios | async; let i = index">
@@ -38,19 +19,10 @@
          <h2>{{servicio.nombre | translate}}</h2>
           <p>{{servicio.descripcion | translate}} </p>
     </ion-item>
-
-
-
     <ion-item-options side="left">
       <button ion-button (click)="detalles()" color="primary">
         <ion-icon name="text"></ion-icon>
         Detalles
-      </button>
-    </ion-item-options>
-    <ion-item-options side="right">
-        <button ion-button color="favorite">
-        <ion-icon name="checkmark-circle"></ion-icon>
-       asistiré
       </button>
     </ion-item-options>
   </ion-item-sliding>

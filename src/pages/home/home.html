@@ -1,11 +1,11 @@
-<ion-header>
+<ion-header class="myheader">
   <ion-navbar class="titulo" color="primary">
              <button ion-button menuToggle>
       <ion-icon name='menu'></ion-icon>
 </button>
     <ion-title >{{"menu.home" | translate}}</ion-title>
   </ion-navbar>
-  <img class="cabecera" src="assets/img/inspiration.jpg" width="100%">
+   <img class="cabecera" [src]="gallery" width="100%">
 </ion-header>
 
 <ion-content padding class="has-header">

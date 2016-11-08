@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {TranslateService} from 'ng2-translate/ng2-translate';
+import { Network } from 'ionic-native';
 /*
   Generated class for the Config page.
 
@@ -12,13 +13,16 @@ import {TranslateService} from 'ng2-translate/ng2-translate';
   templateUrl: 'config.html'
 })
 export class Config {
+public gallery_config:string ="assets/img/configuracion.jpg";
 public lang:string;
   constructor(public navCtrl: NavController, public translate: TranslateService) {
         this.lang = localStorage.getItem("lang");
   }
 
   ionViewDidLoad() {
-    console.log('Hello Config Page');
+    if (Network.connection != 'none') {
+      this.gallery_config = "https://source.unsplash.com/600x300/?engine"
+    }
   }
 
 selectlang(){

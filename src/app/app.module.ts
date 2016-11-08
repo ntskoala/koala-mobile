@@ -11,7 +11,8 @@ import { Rating } from '../pages/rating/rating';
 import { Config } from '../pages/config/config';
 
 import { Noticias } from '../pages/noticias/noticias';
-import { Notifications } from '../providers/notifications'
+import { Notifications } from '../providers/notifications';
+import { Fotos } from '../providers/fotos';
 import {HttpModule,Http} from '@angular/http';
 import {TranslateModule,TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 import {BrowserModule} from "@angular/platform-browser";
@@ -38,6 +39,7 @@ export function createTranslateLoader(http: Http) {
     HttpModule,
     TranslateModule.forRoot({provide: TranslateLoader,useFactory: (createTranslateLoader),deps: [Http]}),
     IonicModule.forRoot(MyApp,{tabsPlacement: 'top'})
+    //IonicModule.forRoot(MyApp)
   ],
   exports: [BrowserModule, HttpModule, TranslateModule],
   bootstrap: [IonicApp],
@@ -53,6 +55,6 @@ export function createTranslateLoader(http: Http) {
     Config,
     Rating
   ],
-  providers: [Notifications]
+  providers: [Notifications,Fotos]
 })
 export class AppModule {}

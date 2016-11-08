@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {DetallesPage} from '../detalles/detalles';
-
+import { Network } from 'ionic-native';
 import {Observable} from 'rxjs/Observable'
 import 'rxjs/add/observable/timer'
 import 'rxjs/add/observable/from'
@@ -28,6 +28,7 @@ export interface Servicio{
   templateUrl: 'services.html'
 })
 export class Services {
+  public gallery_service:string ="assets/img/services2.jpg";
 public servicios: Servicio[]=[
 {"nombre":'web.nombre',"descripcion":"web.descripcion","descripcionlarga":"web.descripcionlarga","imagen":"web.jpg"},
 {"nombre":"apps.nombre","descripcion":"apps.descripcion","descripcionlarga":"apps.descripcionlarga","imagen":"apps.jpg"},
@@ -35,16 +36,13 @@ public servicios: Servicio[]=[
 ];
 public koalaservicios = new Array();
 $servicios;
-public slideOptions: any;
+
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
-    console.log('Hello Services Page');
-        this.slideOptions = {
-          autoplay: 5000,
-          pager: false,
-          loop:true
-          };
+    if (Network.connection != 'none') {
+      this.gallery_service = "https://source.unsplash.com/600x300/?service"
+    }
   }
 
     ionViewDidEnter() {
@@ -52,6 +50,10 @@ public slideOptions: any;
 this.koalaservicios=[];
   this.anim();
  }
+
+
+
+
 anim(){
     var timer = 0;
     var elem;

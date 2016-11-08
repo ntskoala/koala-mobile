@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController,NavParams, Icon } from 'ionic-angular';
-import { SocialSharing } from 'ionic-native';
+import { SocialSharing,Network } from 'ionic-native';
 /*
   Generated class for the Noticias page.
 
@@ -12,6 +12,7 @@ import { SocialSharing } from 'ionic-native';
   templateUrl: 'noticias.html'
 })
 export class Noticias {
+public gallery_news:string ="assets/img/inspiration.jpg";
   public id:number;
  public noticia: string;
  public title: string;
@@ -24,7 +25,13 @@ export class Noticias {
    this.title = this.params.get('noticia').title;
    this.noticia = this.params.get('noticia').message;
    this.image = this.params.get('noticia').image;
-  }
+
+    if (Network.connection != 'none') {
+      this.gallery_news = "https://source.unsplash.com/600x300/?news"
+    }
+ 
+
+}
 
 
 sharemail(){
@@ -56,7 +63,7 @@ sharefacebook(){
   let message = this.noticia;
 let subject = this.title;
 let file = this.image;
-let url ="http://web.ntskoala.com/noticias/noticia.php?id"+this.id;
+let url ="http://web.ntskoala.com/app/noticia.php?id"+this.id;
   SocialSharing.shareViaFacebookWithPasteMessageHint(null,null,url,subject).then(
     (resultado) => console.log("shared",resultado),
     (error) => console.log("sharing error",error)

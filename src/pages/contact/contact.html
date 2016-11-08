@@ -1,11 +1,11 @@
-<ion-header>
+<ion-header class="header">
   <ion-navbar class="titulo" color="primary">
              <button ion-button menuToggle>
       <ion-icon name='menu'></ion-icon>
 </button>
     <ion-title >{{"menu.contact" | translate}}</ion-title>
   </ion-navbar>
-  <img class="cabecera" src="assets/img/inspiration.jpg" width="100%">
+  <img class="cabecera" [src]="gallery_contact" width="100%">
 </ion-header>
 
 <ion-content>
