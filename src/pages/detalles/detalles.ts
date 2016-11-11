@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, Icon } from 'ionic-angular';
 import { Rating } from '../rating/rating';
 import { Network } from 'ionic-native';
+import { Presupuesto } from '../presupuesto/presupuesto';
 /*
   Generated class for the Servicio page.
 
@@ -33,7 +34,10 @@ public descripcionlarga: string;
 
 
   }
-
+presupuesto(){
+  let tipo = this.nombre;
+  this.navCtrl.push(Presupuesto,{tipo});
+}
 swipe(e){
   console.log("swipe");
   alert('swiped' + e.direction);

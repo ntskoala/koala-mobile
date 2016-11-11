@@ -8,7 +8,17 @@
         "about": "About",
         "detalles": "Detalles",
         "noticias": "Noticias",
-        "config": "Configuración"
+        "config": "Configuración",
+        "presupuesto": "Presupuesto"
+    },
+    "presupuesto":{
+        "login": "Login",
+        "notificaciones": "Notificaciones",
+        "camara": "Camara",
+        "gps": "Geolocalización",
+        "calendario": "Calendario",
+        "rating": "Puntuación de publicaciones",
+        "idiomas": "Multi idioma"
     },
     "web":{
         "nombre": "Webs",
@@ -32,14 +42,8 @@
     "noticia2": "Según parece Microsoft ha perdido el interés por seguir en la batalla de los móviles, y pocas novedades se verán respecto al sistema operativo para móviles <a href='http://www.xatakamovil.com/mercado/caminamos-irremediablemente-hacia-un-duopolio-en-sistemas-operativos-moviles'>leer más</a>",
     "alertas": {
         "error": "Error",
-        "maluser": "Usuario o password incorrecto, vuelva a intentarlo",
          "errorvalor": "El valor tiene que se numérico y no puede estar vacío",
          "nohayemail": "No se puede enviar el email automático",
-         "rangoerror": "El parametro está fuera del intervalo permitido",
-        "valorminimo": "Alerta superado el valor mínimo",
-        "valormaximo": "Alerta superado el valor máximo",
-        "tolerancia": "Alerta superado el valor tolerancia",
-        "critico": "Alerta superado el valor critico",
         "conexion": "No hay conexión"
     },
     "config":{
@@ -48,14 +52,23 @@
         "ok": "ok"
     },
     "asistencia": "Asistencia",
-    "control": "control",
-    "checklist": "checklist",
-    "valor": "valor",
-    "valorc": "valor capturado: ",
-    "minimo": "mínimo: ",
-    "tolerancia": "tolerancia: ",
-    "critico":"critico: ",
-    "foto": "foto",
-    "terminar": "terminar"
-
+    "terminar": "terminar",
+    "cerrar": "cerrar",
+    "enviar": "enviar",
+    "login":"login",
+    "notificaciones":"Notificaciones",
+    "texto_presupuesto":"Orientación sobre el coste de una app para pymes de características similares a esta que estás usando.",
+    "help":{
+        "login": "Los usuarios de identifican para utilizar la app, pueden hacerlo con su email o utilizando su cuenta de facebook o gmail",
+        "notificaciones": "Se pueden enviar avisos directamente al teléfono del usuario que recibirá una alerta de la app",        
+        "camara":"",
+        "gps":"gps",
+        "rating":"Valoraciones",
+        "idiomas":"Uso de más de un idioma",
+        "personal":"Pagina personal",
+        "tienda online": "Comercio electrónico de venta de productos desde la web, carrito de la compra y pasarela de pago con tarjeta de crédito",
+        "blog": "Sistema de publicación de articulos sobre la temática escogida, para mantener informados a los lectores",
+        "noticias": "Sistema de publicación de noticias relativas a su sector gestionadas desde un backoffice",
+        "backoffice": "Sistema de gestión de su sitio web con herramientas que os permitirán mantener y gestionar los contenidos y servicios de vuestro sitio web"
+        }
 }

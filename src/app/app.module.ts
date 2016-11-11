@@ -9,7 +9,8 @@ import {DetallesPage} from '../pages/detalles/detalles';
 import { Services } from '../pages/services/services';
 import { Rating } from '../pages/rating/rating';
 import { Config } from '../pages/config/config';
-
+import { Presupuesto } from '../pages/presupuesto/presupuesto';
+import { Help } from '../pages/help/help';
 import { Noticias } from '../pages/noticias/noticias';
 import { Notifications } from '../providers/notifications';
 import { Fotos } from '../providers/fotos';
@@ -32,7 +33,9 @@ export function createTranslateLoader(http: Http) {
     Noticias,
     Services,
     Config,
-    Rating
+    Rating,
+    Presupuesto,
+    Help
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,9 @@ export function createTranslateLoader(http: Http) {
     Noticias,
     Services,
     Config,
-    Rating
+    Rating,
+    Presupuesto,
+    Help
   ],
   providers: [Notifications,Fotos]
 })

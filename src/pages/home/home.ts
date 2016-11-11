@@ -20,7 +20,7 @@ export interface Servicio{
   id:number;
   title: string,
   message: string,
-  //descripcionlarga: string,
+  fuente: string,
   image: string
 }
 @Component({
@@ -92,7 +92,7 @@ loadnoticias(){
                         "id": data.rows.item(i).id,
                       "title": data.rows.item(i).title,
                       "message": data.rows.item(i).message,
-                     // "descripcionlarga": data.rows.item(i).noticia,
+                      "fuente": data.rows.item(i).fuente,
                       "image": data.rows.item(i).image,
                       });
                     }

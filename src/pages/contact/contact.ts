@@ -2,15 +2,18 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 import {CallNumber, Network} from 'ionic-native';
-import { SocialSharing } from 'ionic-native';
+import { SocialSharing,Device } from 'ionic-native';
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
 })
 export class ContactPage {
+  public device: Device;
+  public platform:boolean=false;
 public gallery_contact:string ="assets/img/contactar.jpg";
   constructor(public navCtrl: NavController) {
-
+console.log(Device.device.platform);
+ this.platform = Device.device.platform == 'Android' ? true:false;
   }
 
   ionViewDidLoad() {

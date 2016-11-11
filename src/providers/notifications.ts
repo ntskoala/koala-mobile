@@ -60,10 +60,11 @@ this.db.openDatabase({ name: "koala.db", location: "default" }).then(() => {
                       let id = noticia.id;
                       let titulo = noticia.title;
                       let message = noticia.msg;
-                      let foto = noticia.image; 
-                          this.db.executeSql('INSERT INTO noticias (title , message, image ) VALUES (?,?,?)', [titulo, message,foto])
+                      let foto = noticia.image;
+                      let fuente = noticia.fuente;
+                          this.db.executeSql('INSERT INTO noticias (title , message, image, fuente ) VALUES (?,?,?,?)', [titulo, message,foto,fuente])
                           .then((data) => {
-                            console.log("NOTICIA SINCRO GUARDADA-> " + JSON.stringify(data.res));
+                            console.log("NOTICIA SINCRO GUARDADA-> " + JSON.stringify(data));
                             //  alert ('creada logins');
                           }, (error) => {
                             console.log("ERROR -> ", error);

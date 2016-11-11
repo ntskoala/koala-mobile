@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController,Content } from 'ionic-angular';
 import {DetallesPage} from '../detalles/detalles';
 import { Network } from 'ionic-native';
 import {Observable} from 'rxjs/Observable'
@@ -28,6 +28,7 @@ export interface Servicio{
   templateUrl: 'services.html'
 })
 export class Services {
+  @ViewChild(Content) content: Content;
   public gallery_service:string ="assets/img/services2.jpg";
 public servicios: Servicio[]=[
 {"nombre":'web.nombre',"descripcion":"web.descripcion","descripcionlarga":"web.descripcionlarga","imagen":"web.jpg"},
@@ -43,7 +44,12 @@ $servicios;
     if (Network.connection != 'none') {
       this.gallery_service = "https://source.unsplash.com/600x300/?service"
     }
+    setTimeout(()=>this.resize(),500);
   }
+  resize(){
+this.content.resize();
+  }
+
 
     ionViewDidEnter() {
     this.$servicios;

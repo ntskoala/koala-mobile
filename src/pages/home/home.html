@@ -1,4 +1,4 @@
-<ion-header class="myheader">
+<ion-header class="myheader2">
   <ion-navbar class="titulo" color="primary">
              <button ion-button menuToggle>
       <ion-icon name='menu'></ion-icon>
@@ -15,7 +15,7 @@
   <ion-item-sliding *ngIf="noticia.title" (click)="detalles(noticia)">
     <ion-item>
     <ion-avatar item-left>
-      <img [src]="'http://web.ntskoala.com/noticias/img/'+noticia.image" >
+      <img [src]="'http://web.ntskoala.com/app/img/'+noticia.image" >
     </ion-avatar>
          <h2>{{noticia.title}}</h2>
           <p>{{noticia.message}} </p>

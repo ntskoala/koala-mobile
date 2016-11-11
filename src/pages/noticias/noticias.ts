@@ -17,6 +17,7 @@ public gallery_news:string ="assets/img/inspiration.jpg";
  public noticia: string;
  public title: string;
  public image: string;
+ public fuente: string;
   constructor(public navCtrl: NavController, public params: NavParams) {}
 
   ionViewDidLoad() {
@@ -25,7 +26,7 @@ public gallery_news:string ="assets/img/inspiration.jpg";
    this.title = this.params.get('noticia').title;
    this.noticia = this.params.get('noticia').message;
    this.image = this.params.get('noticia').image;
-
+   this.fuente = this.params.get('noticia').fuente;
     if (Network.connection != 'none') {
       this.gallery_news = "https://source.unsplash.com/600x300/?news"
     }
@@ -35,7 +36,7 @@ public gallery_news:string ="assets/img/inspiration.jpg";
 
 
 sharemail(){
-  alert('mail');
+//  alert('mail');
   let message = this.noticia;
 let subject = this.title;
 let file = this.image;
@@ -47,19 +48,20 @@ let url ="http://ntskoala.com";
 }
 
 sharewhatsapp(){
-  alert('whatsapp');
+//  alert('whatsapp');
   let message = this.noticia;
 let subject = this.title;
 let file = this.image;
 let url ="http://ntskoala.com";
-  SocialSharing.shareViaWhatsApp(message,file, url).then(
+  SocialSharing.shareViaWhatsApp(message,file, null).then(
     (resultado) => console.log("shared",resultado),
     (error) => console.log("sharing error",error)
   );
 }
 
+
 sharefacebook(){
-  alert('facebook');
+//  alert('facebook');
   let message = this.noticia;
 let subject = this.title;
 let file = this.image;
@@ -70,13 +72,13 @@ let url ="http://web.ntskoala.com/app/noticia.php?id"+this.id;
   );
 }
 
-shareinstagram(){
-  alert('instagram');
+sharetwitter(){
+//  alert('twitter');
   let message = this.noticia;
 let subject = this.title;
 let file = this.image;
-let url ="http://ntskoala.com";
-  SocialSharing.shareViaInstagram(message, file).then(
+let url ="http://web.ntskoala.com/app/noticia.php?id"+this.id;
+  SocialSharing.shareViaTwitter(subject, file,url).then(
     (resultado) => console.log("shared",resultado),
     (error) => console.log("sharing error",error)
   );

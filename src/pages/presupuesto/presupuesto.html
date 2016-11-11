@@ -1,0 +1,31 @@
+<!--
+  Generated template for the Presupuesto page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="myheader2">
+  <ion-navbar class="titulo" color="primary">
+             <button ion-button menuToggle>
+      <ion-icon name='menu'></ion-icon>
+</button>
+    <ion-title >{{"menu.presupuesto" | translate}}</ion-title>
+  </ion-navbar>
+  <img class="cabecera" [src]="gallery_presupuesto" width="100%">
+  <div class="presupuesto">presupuesto
+    {{"texto_presupuesto" | translate}}<BR>
+  <b>{{"valoracion" | translate}}: {{valor}}</b>
+  </div>
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-list *ngFor="let opcion of opciones">
+<ion-item *ngIf="opcion">
+  <ion-label>{{opcion | translate}}<span style="float:right"><img src="assets/img/help.jpg" (click)="help(opcion)" width="28px"></span></ion-label>
+  <ion-toggle [(ngModel)]="app[opcion]" (ionChange)="cambio()"></ion-toggle>
+</ion-item>
+</ion-list>
+<button ion-button (click)="enviar()">{{"enviar" | translate}}</button>
+</ion-content>

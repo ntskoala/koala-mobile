@@ -1,4 +1,4 @@
-<ion-header class="header">
+<ion-header class="myheader2">
   <ion-navbar class="titulo" color="primary">
              <button ion-button menuToggle>
       <ion-icon name='menu'></ion-icon>
@@ -15,11 +15,11 @@
       <ion-icon name="phone-portrait" item-left></ion-icon>
       llama
     </ion-item>
-        <ion-item>
+        <ion-item (click)="mail()">
       <ion-icon name="mail" item-left></ion-icon>
       escribe
     </ion-item>
-        <ion-item (click)="whatsapp()">
+        <ion-item (click)="whatsapp()" *ngIf="platform">
       <ion-icon name="logo-whatsapp" item-left></ion-icon>
       whatsapp
     </ion-item>
