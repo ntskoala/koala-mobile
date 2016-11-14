@@ -39,9 +39,10 @@ public koalaservicios = new Array();
 $noticias;
 public gallery: string = "assets/img/inspiration.jpg";
 public db: SQLite;
+public conexion=false;
   constructor(platform: Platform,public navCtrl: NavController,public fotos:Fotos) {
     platform.ready().then(() => 
-      this.loadnoticias());
+      setTimeout (()=> this.loadnoticias(),350));
   
   }
 ngAfterViewInit(){
@@ -51,14 +52,14 @@ ngAfterViewInit(){
 ngOnInit(){
 //alert("oninit")
 if (Network.connection != 'none'){
-  this.gallery = "https://source.unsplash.com/600x300/?technology"
+  this.gallery = "https://source.unsplash.com/600x300/?technology";
+  this.conexion=true;
 }
 }
  ionViewDidLoad() {
 
   }
   ionViewDidEnter() {
-
     this.$noticias;
 this.koalaservicios=[];
   this.anim();
@@ -86,7 +87,7 @@ loadnoticias(){
       //this.refresh();
       console.log("base de datos abierta");
       this.db.executeSql('select * from noticias ORDER BY id DESC', []).then((data) => {
-        console.log("NOTICIA SELECT-> ", data.rows.length);
+        console.log("NOTICIA SELECT-> ", data.rows.length,data);
                    for(let i = 0; i < data.rows.length; i++) {
                       this.servicios.push({
                         "id": data.rows.item(i).id,
@@ -97,7 +98,7 @@ loadnoticias(){
                       });
                     }
                     this.anim();
-        //  alert ('creada logins');
+          
       }, (error) => {
         console.log("ERROR load noticias -> ", error);
       });

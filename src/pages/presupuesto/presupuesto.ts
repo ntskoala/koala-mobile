@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Network } from 'ionic-native';
+import { Network, SocialSharing } from 'ionic-native';
 import { ModalController } from 'ionic-angular';
 import { Help } from '../help/help';
  export interface prespuestoapp{
@@ -22,7 +22,7 @@ import { Help } from '../help/help';
   templateUrl: 'presupuesto.html'
 })
 export class Presupuesto {
-public gallery_presupuesto: string;
+public gallery_presupuesto: string="assets/img/presupuesto.jpg";
 public tipo:string;
 public app: any;// = {"login":false,"notificaciones":false,"camara":false,"gps":false,"rating":false,"idiomas":false};
 public presupuesto:any;// = {"login":450,"notificaciones":450,"camara":500,"gps":350,"rating":400,"idiomas":350};
@@ -34,18 +34,18 @@ public valor: number = 390;
     switch (this.tipo){
       case "apps.nombre":
       this.app = {"login":false,"notificaciones":false,"camara":false,"gps":false,"rating":false,"idiomas":false};
-      this.presupuesto = {"login":450,"notificaciones":450,"camara":500,"gps":350,"rating":400,"idiomas":350};
+      this.presupuesto = {"login":450,"notificaciones":550,"camara":550,"gps":450,"rating":400,"idiomas":350};
       this.carga();
       break;
       case "web.nombre":
       console.log("web",this.tipo);
       this.app = {"personal":false,"tienda online":false,"blog":false,"noticias":false,"backoffice":false,"idiomas":false};
-      this.presupuesto = {"personal":0,"tienda online":1500,"blog":400,"noticias":400,"backoffice":1500,"idiomas":350};
+      this.presupuesto = {"personal":0,"tienda online":1700,"blog":450,"noticias":450,"backoffice":1700,"idiomas":350};
       this.carga();
       break;
       case "webapps.nombre":
       this.app = {"login":false,"notificaciones":false,"gps":false,"rating":false,"idiomas":false};
-      this.presupuesto = {"login":450,"notificaciones":450,"gps":350,"rating":400,"idiomas":350};
+      this.presupuesto = {"login":450,"notificaciones":650,"gps":450,"rating":400,"idiomas":350};
       this.carga();
       break;
     }
@@ -74,6 +74,14 @@ for(let elem in this.app){
 
 enviar(){
   console.log(this.app);
+let message = this.app;
+let subject = "Solicitud de presupuesto";
+//let file = this.image;
+//let url ="http://ntskoala.com";
+  SocialSharing.shareViaEmail(message, subject,null,null,null, null).then(
+    (resultado) => console.log("shared",resultado),
+    (error) => console.log("sharing error",error)
+  );
 }
 cambio(){
   this.valor = 390;

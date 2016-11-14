@@ -12,7 +12,7 @@
     <ion-title >{{"menu.presupuesto" | translate}}</ion-title>
   </ion-navbar>
   <img class="cabecera" [src]="gallery_presupuesto" width="100%">
-  <div class="presupuesto">presupuesto
+  <div class="presupuesto">
     {{"texto_presupuesto" | translate}}<BR>
   <b>{{"valoracion" | translate}}: {{valor}}</b>
   </div>
@@ -22,8 +22,8 @@
 <ion-content padding>
 
 <ion-list *ngFor="let opcion of opciones">
-<ion-item *ngIf="opcion">
-  <ion-label>{{opcion | translate}}<span style="float:right"><img src="assets/img/help.jpg" (click)="help(opcion)" width="28px"></span></ion-label>
+<ion-item *ngIf="opcion" class="opcion">
+  <ion-label>{{"presupuesto."+opcion | translate}}<span style="float:right"><img src="assets/img/help.jpg" (click)="help(opcion)" width="28px"></span></ion-label>
   <ion-toggle [(ngModel)]="app[opcion]" (ionChange)="cambio()"></ion-toggle>
 </ion-item>
 </ion-list>

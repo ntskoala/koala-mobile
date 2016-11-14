@@ -21,10 +21,10 @@
     <span style="float:right"><ion-icon name="md-share" (click)="sharing()"></ion-icon></span>
   </ion-item>-->
     <ion-item>
-      <span style="float:left" (click)="presupuesto()">Cuanto me costará?</span>
+      <span style="float:left" (click)="presupuesto()">{{"cuanto" | translate}}</span>
   </ion-item>
 
-<ion-card (swipe)="swipe($event)">
+<ion-card class="detalle">
   <ion-card-title>
   {{nombre | translate}}
   </ion-card-title>

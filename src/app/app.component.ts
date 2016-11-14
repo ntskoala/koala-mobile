@@ -30,7 +30,7 @@ public db: SQLite;
       // Here you can do any higher level native things you might need.
       this.notificaciones();
       StatusBar.styleDefault();
-      this.inicializa();
+      localStorage.getItem("db") === null ? this.inicializa(): this.notifications.sincronews();
 
 
 
@@ -100,8 +100,10 @@ push.on('error', (e) => {
 
   inicializa() {
     let titulo1,titulo2,noticia1,noticia2;
-    let foto1="http://web.ntskoala.com/LogoP.jpg";
-    let foto2="http://web.ntskoala.com/noticias/img/windows.jpg";
+    let foto1="LogoP.jpg";
+    let foto2="windows.jpg";
+    let fuente1="#";
+    let fuente2="http://www.xatakamovil.com/mercado/caminamos-irremediablemente-hacia-un-duopolio-en-sistemas-operativos-moviles";
     this.translate.get("titulo1").subscribe((data) => titulo1=data);
     this.translate.get("noticia1").subscribe((data) => noticia1=data);
     this.translate.get("titulo2").subscribe((data) => titulo2=data);
@@ -113,17 +115,18 @@ push.on('error', (e) => {
       //this.db.executeSql('DROP TABLE noticias',[]);
       this.db.executeSql('CREATE TABLE IF NOT EXISTS noticias (id INTEGER PRIMARY KEY, title TEXT, message TEXT, image TEXT, fuente TEXT)', []).then((data) => {
         console.log("TABLE CREATED  noticias-> " + JSON.stringify(data));
-      //   this.db.executeSql('INSERT INTO noticias (title , message, image ) VALUES (?,?,?)', [titulo1, noticia1,foto1]).then((data) => {
-      //   console.log("NOTICIA GUARDADA 1-> " + JSON.stringify(data.res));
-      //   //  alert ('creada logins');
-      // }, (error) => {
-      //   console.log("ERROR -> ", error);
-      // });
-      // this.db.executeSql('INSERT INTO noticias (title , message, image ) VALUES (?,?,?)', [titulo2, noticia2,foto2]).then((data) => {
-      //   console.log("NOTICIA GUARDADA 2-> " + JSON.stringify(data.res));
-      // }, (error) => {
-      //   console.log("ERROR -> ", error);
-      // });
+        localStorage.setItem("db","true");
+        this.db.executeSql('INSERT INTO noticias (title , message, image,fuente ) VALUES (?,?,?,?)', [titulo1, noticia1,foto1,fuente1]).then((data) => {
+        console.log("NOTICIA GUARDADA 1-> " + JSON.stringify(data.res));
+        //  alert ('creada logins');
+      }, (error) => {
+        console.log("ERROR -> ", error);
+      });
+      this.db.executeSql('INSERT INTO noticias (title , message, image,fuente ) VALUES (?,?,?,?)', [titulo2, noticia2,foto2,fuente2]).then((data) => {
+        console.log("NOTICIA GUARDADA 2-> " + JSON.stringify(data.res));
+      }, (error) => {
+        console.log("ERROR -> ", error);
+      });
       this.notifications.sincronews();
       }, (error) => {
         console.log("ERROR -> " + JSON.stringify(error.err));

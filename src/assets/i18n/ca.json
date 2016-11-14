@@ -1,57 +1,77 @@
 {
-    "home" : "Inici",
+    "home" : "Home",
     "tutorial" : "Tutorial",
      "menu": {    
-        "home": "Inici",
-        "controles": "Controls",
-        "checklist": "Checklist",
-        "sync": "sincronització",
-        "login": "Login",
-        "config": "Configuració"
+        "home": "Noticies",
+        "servicios": "Serveis",
+        "contact": "Contacte",
+        "about": "About",
+        "detalles": "Detalls",
+        "noticias": "Noticies",
+        "config": "Configuració",
+        "presupuesto": "Presupost"
     },
+    "presupuesto":{
+        "login": "Login",
+        "notificaciones": "Notificacions",
+        "camara": "Camara",
+        "gps": "Geolocalització",
+        "calendario": "Calendari",
+        "rating": "Puntuació",
+        "idiomas": "Multi idioma",
+        "personal":"Pàgina personal",
+        "tienda online": "I-commerce",
+        "blog":"Blog",
+        "noticias":"Noticies",
+        "backoffice":"Backoffice"
+    },
+    "web":{
+        "nombre": "Webs",
+        "descripcion": "Programació de webs y aplicacions basades en entorn web",
+        "descripcionlarga": "Des de senzilles landing pages, webs corporatives o i-commerce, a potents eines basades en entorn web, basem el nostre desenvolupament en el framework angular de google, una garantia de rendiment, escalabilitat i manteniment."
+    },
+    "apps":{
+        "nombre": "Apps",
+        "descripcion": "La nostre especialitat son les apps híbridas",
+        "descripcionlarga":"Si la teva necessitat requereix l'aprofitament de tots els recursos i sensors dels mòbils aquesta és la teva opció. Un únic desenvolupament, disponibilitat per a les tendes apple, google i windows, tots els nostres desenvolupaments es basen en Angular i Ionic2, una garantia de rendiment, escalabilitat i manteniment."
+    },
+    "webapps":{
+        "nombre": "Progresive Web Apps",
+        "descripcion": "Queda't amb el millor de la web i el millor de les apps.",
+        "descripcionlarga":"Desenvolupament de potents eines web, que funcionen com una app, rep notificacions visualitza en qualsevol dispositiu, i sense necessitat d'instal·lacions o descàrregues de tendes"
+    },
+    "about": "Una app és una de les millors eines per millorar la comunicació i fidelització amb els nostres clients.<BR>En NTS Koala ens dediquem al desenvolupament web des de l'any 1999, i des de principis d'aquesta dècada creguem apps.<BR>Aquesta aplicació és una mostra, inclou notificacions push, cridades de telèfon directes, compartir en xarxes socials, actualització i sincronització d'informació en el núvol, entre molts altres serveis.<BR>Aprofitarem aquesta app per informar setmanalment de notícies i/o trucs referents a mòbils i mobilitat, esperem que sigui d'utilitat i serveixi d'inspiració per a la seva pròpia app.<BR>Totes les empreses haurien de tenir una eina social per millorar la connexió amb els seus clients",
+    "titulo1": "La nova app de Koala ja disponible",
+    "noticia1": "Hem llançat la nova app de coala, en està secció trobaràs cada setmana una notícia o truc sobre mòbils o mobilitat que poden resultar del teu interès.",
+    "titulo2": "Windows Phone podría desapareixer en el futur",
+    "noticia2": "Segons sembla Microsoft ha perdut l'interès per seguir en la batalla dels mòbils, i poques novetats es veuran respecte al sistema operatiu per a mòbils",
     "alertas": {
         "error": "Error",
-        "maluser": "Usuario o password incorrecto, vuelva a intentarlo",
-         "errorvalor": "El valor tiene que se numérico y no puede estar vacío",
-         "nohayemail": "No se puede enviar el email automático",
-         "rangoerror": "El parametro está fuera del intervalo permitido",
-        "valorminimo": "Alerta superado el valor mínimo",
-        "valormaximo": "Alerta superado el valor máximo",
-        "tolerancia": "Alerta superado el valor tolerancia",
-        "critico": "Alerta superado el valor critico",
         "conexion": "No hi ha conexió"
-    },
-    "email":{
-        "subject":"Proacciona -> parámetro fuera del rango permitido",
-        "body":"<h1>Proacciona -> parámetro fuera del rango permitido</h1><p>Proacciona le informa que uno de los parametros está fuera del rango permitido, a continuación se muestra el valor del error y los límites establecidos:</p>",
-        "pie": "<p>Atentamente,<br> el equipo de Proacciona.</p>"
-    },
-    "intro":{
-        "titulo1":"Login",
-        "slide1": "Introduce tu nombre de usuario y password para acceder",
-        "titulo2":"Menú",
-        "slide2":"Selecciona si quieres rellenar un control o un checklist",
-        "titulo3": "Lista de controles",
-        "slide3": "listado de controles o checklist disponibles para ti",
-        "titulo4": "Checklist",
-        "slide4": "En los checklist puedes hacer swipe, deslizar el dedo a izquierda o derecha, para insertar un comentario",
-        "titulo5": "Comienza ya",
-        "slide5": "Pulsa el botón login para comenzar, marca la casilla de no mostrar más para que este tutorial no se muestre la próxima vez que entres en la aplicación"
     },
     "config":{
         "idioma" : "idioma",
-        "email": "Direcció de email on s'enviaràn les alertes",
-        "ok": "accepta"
+        "ok": "ok"
     },
-    "asistencia": "Asistencia",
-    "control": "control",
-    "checklist": "checklist",
-    "valor": "valor",
-    "valorc": "valor capturado: ",
-    "minimo": "mínimo: ",
-    "tolerancia": "tolerancia: ",
-    "critico":"critico: ",
-    "foto": "foto",
-    "terminar": "terminar"
-
+    "asistencia": "Assistència",
+    "terminar": "terminar",
+    "cerrar": "tancar",
+    "enviar": "enviar",
+    "login":"login",
+    "notificaciones":"Notificacions",
+    "texto_presupuesto":"Orientació sobre el cost d'una app per a pimes de característiques similars a aquesta que estàs usant.",
+    "cuanto": "cuant hem costaría?",
+    "help":{
+        "login": "Els usuaris d'identifiquen per utilitzar la app, poden fer-ho amb el seu email o utilitzant el seu compte de facebook o gmail.",
+        "notificaciones": "Es poden enviar missatges directament al telèfon de l'usuari que rebrà una alerta de la app.",        
+        "camara":"Ús de la camara del telèfon, per per exemple deixar constància d'un fet.",
+        "gps":"Utilització del sistema de Geolocalització, per ubicar el usuari en un lloc determinat en un moment donat.",
+        "rating":"Deixa que els usuaris deixin valoracions, sobre els teus articles, noticies o posts.",
+        "idiomas":"Us de més d'un idioma.",
+        "personal":"Pàgina personal, amb informació sobre el propietari de la pàgina.",
+        "tienda online": "Comerç electrònic de venda de productes des de la web, carret de la compra i passarel·la de pagament amb targeta de crèdit.",
+        "blog": "Sistema de publicació d'articles sobre la temàtica escollida, per mantenir informats als lectors.",
+        "noticias": "Sistema de publicació de notícies relatives al seu sector gestionades des d'un backoffice.",
+        "backoffice": "Sistema de gestió del seu lloc web amb eines que us permetran mantenir i gestionar els continguts i serveis del vostre lloc web."
+        }
 }

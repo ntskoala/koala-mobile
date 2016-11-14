@@ -15,7 +15,7 @@
   <ion-item-sliding *ngIf="noticia.title" (click)="detalles(noticia)">
     <ion-item>
     <ion-avatar item-left>
-      <img [src]="'http://web.ntskoala.com/app/img/'+noticia.image" >
+      <img [src]="'http://web.ntskoala.com/app/img/'+noticia.image" *ngIf="conexion">
     </ion-avatar>
          <h2>{{noticia.title}}</h2>
           <p>{{noticia.message}} </p>

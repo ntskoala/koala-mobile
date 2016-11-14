@@ -1,11 +1,22 @@
 page-presupuesto {
+    @keyframes opcionanim{
+        0%{
+            padding-right: calc(100%);
+        }
+        100%{
+             padding-right: calc(0%);
+        }
+    }
 .presupuesto{
 z-index: 10;
     width: 100%;
     height: 150px;
     position: absolute;
-    margin-top: -100px;
+    margin-top: -120px;
     background-color: #fff;
     opacity: 0.85;
+}
+.opcion{
+    animation: opcionanim 2s;
 }
 }

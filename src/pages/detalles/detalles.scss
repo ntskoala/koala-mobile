@@ -1,3 +1,13 @@
 page-detalles {
-
+@keyframes animation_detalle{
+            0%{
+            padding-left: calc(100%);
+        }
+        100%{
+             padding-left: calc(0%);
+        }
+}
+.detalle{
+    animation: animation_detalle 2s;
+}
 }
