@@ -23,9 +23,9 @@ console.log(Device.device.platform);
   }
 
 dial(){
-CallNumber.callNumber('695169539', true)
-  .then(() => console.log('Launched dialer!'))
-  .catch(() => console.log('Error launching dialer'));
+//CallNumber.callNumber('695169539', true)
+//  .then(() => console.log('Launched dialer!'))
+//  .catch(() => console.log('Error launching dialer'));
 }
  
 whatsapp(){

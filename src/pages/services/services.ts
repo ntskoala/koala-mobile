@@ -42,7 +42,7 @@ $servicios;
 
   ionViewDidLoad() {
     if (Network.connection != 'none') {
-      this.gallery_service = "https://source.unsplash.com/600x300/?service"
+      this.gallery_service = "https://source.unsplash.com/600x300/?work"
     }
     setTimeout(()=>this.resize(),500);
   }

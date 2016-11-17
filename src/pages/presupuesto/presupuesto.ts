@@ -74,11 +74,11 @@ for(let elem in this.app){
 
 enviar(){
   console.log(this.app);
-let message = this.app;
+let message = "Estoy interesado en un presupuesto de desarrollo que incluya las siguientes características:<BR>" + JSON.stringify(this.app).toString();
 let subject = "Solicitud de presupuesto";
 //let file = this.image;
 //let url ="http://ntskoala.com";
-  SocialSharing.shareViaEmail(message, subject,null,null,null, null).then(
+  SocialSharing.shareViaEmail(message, subject,["jorged@ntskoala.com"],null,null, null).then(
     (resultado) => console.log("shared",resultado),
     (error) => console.log("sharing error",error)
   );
